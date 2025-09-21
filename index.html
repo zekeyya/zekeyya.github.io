@@ -4,34 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="Permissions-Policy" content="clipboard-write=(self)">
-  <link rel="icon" type="image/png" href="Media/Favicon.Png">
+  <link rel="icon" type="image/png" href="Media/Favicon.png">
   <title>Zeke.Portfolio</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     html, body {
-      height: 100vh;
-      overflow: hidden;
       margin: 0;
       padding: 0;
-      box-sizing: border-box; /* Ensure no padding/margin affects layout */
+      height: 100%; /* feels safer than vh */
+      overflow: hidden;
+      box-sizing: border-box;
     }
+
     body {
       display: flex;
       justify-content: center;
       align-items: center;
+      background: #000; /* temp fallback */
     }
+
     canvas {
-      width: 100vw !important; /* Force full viewport width */
-      height: 100vh !important; /* Force full viewport height */
       position: absolute;
       top: 0;
       left: 0;
-      box-sizing: border-box; /* Include padding/borders in dimensions */
+      width: 100vw;
+      height: 100vh;
+      box-sizing: border-box;
+      display: block;
     }
   </style>
 </head>
 <body>
   <canvas id="c"></canvas>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src="script.js"></script>
 </body>
